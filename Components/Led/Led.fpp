@@ -17,7 +17,23 @@ module Components {
             severity activity high \
             format "Set blinking state to {}."
 
+        @ Reports update to the updating blink interval parameter.
+        event BlinkIntervalSet(interval: U32) \
+            severity activity high \
+            format "Blink interval set to {}."
+
+
         telemetry BlinkingState: Fw.On
+        telemetry LedTransitions: U64
+
+        @ Blinking interval in rate group ticks
+        param BLINK_INTERVAL: U32
+
+        @ Port receiving calls from the rate group
+        sync input port run: Svc.Sched
+
+        @ Port sending calls to the GPIO driver
+        output port gpioSet: Drv.GpioWrite                
 
         ###############################################################################
         # Standard AC Ports: Required for Channels, Events, Commands, and Parameters  #

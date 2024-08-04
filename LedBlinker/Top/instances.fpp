@@ -126,4 +126,6 @@ module LedBlinker {
 
   instance comStub: Svc.ComStub base id 0x4B00
 
+  instance gpioDriver: Drv.LinuxGpioDriver base id 0x4C00
+
 }
