@@ -40,14 +40,13 @@ class Led : public LedComponentBase {
                                     Fw::On on_off         //!< Indicates whether the blinking should be on or off
                                     ) override;
 
-      //! Handler implementation for run
-      //!
-      void run_handler(
-          const NATIVE_INT_TYPE portNum, /*!< The port number*/
-          NATIVE_UINT_TYPE context /*!< 
-      The call order
-      */
-      ) override;                                    
+    //! Handler implementation for run
+    //!
+    void run_handler(const NATIVE_INT_TYPE portNum, /*!< The port number*/
+                     NATIVE_UINT_TYPE context       /*!<
+                       The call order
+                       */
+                     ) override;
 
     //! Emit parameter updated EVR
     //!
